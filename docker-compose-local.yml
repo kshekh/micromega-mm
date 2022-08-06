@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+    front_end:
+        image: node:alpine
+        restart: always
+        volumes: 
+            # - ./build:/home/node/app
+            - ./app_staging:/home/node/app
+        command: "node /home/node/app"
+        ports:
+            - "3002:3000"

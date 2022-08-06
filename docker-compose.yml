@@ -1,0 +1,27 @@
+version: '3.7'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  landing_pages:
+    image: node:alpine
+    restart: always
+    networks:
+      - proxy
+    volumes:
+      - ./app_prod:/home/node/app
+    command: "node /home/node/app"
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.micromegas-landing.entrypoints=http'
+      - 'traefik.http.routers.micromegas-landing.rule=Host(`micromegas.io`)'
+      - 'traefik.http.routers.micromegas-landing.middlewares=https-redirect@file'
+      - 'traefik.http.routers.micromegas-landing-secure.entrypoints=https'
+      - 'traefik.http.routers.micromegas-landing-secure.rule=Host(`micromegas.io`)'
+      - 'traefik.http.routers.micromegas-landing-secure.tls=true'
+      - 'traefik.http.routers.micromegas-landing-secure.tls.certresolver=http'
+      - 'traefik.http.routers.micromegas-landing-secure.service=micromegas-landing'
+      - 'traefik.http.services.micromegas-landing.loadbalancer.server.port=3000'
+      - 'traefik.docker.network=proxy'

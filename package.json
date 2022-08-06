@@ -1,0 +1,73 @@
+{
+	"name": "micromegas",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"package": "vite package",
+		"preview": "vite preview",
+		"test": "playwright test",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. .",
+		"watch:css": "postcss ./src/assets/tailwind/tailwind.scss -o ./src/assets/dist/css/styles.css --watch --verbose"
+	},
+	"devDependencies": {
+		"@fullcalendar/daygrid": "^5.11.0",
+		"@playwright/test": "^1.22.2",
+		"@rgossiaux/svelte-headlessui": "^1.0.2",
+		"@rgossiaux/svelte-heroicons": "^0.1.2",
+		"@sveltejs/adapter-node": "^1.0.0-next.60",
+		"@sveltejs/kit": "next",
+		"@typescript-eslint/eslint-plugin": "^5.27.0",
+		"@typescript-eslint/parser": "^5.27.0",
+		"autoprefixer": "10.4.5",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"postcss": "^8.4.14",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"saos": "^1.3.1",
+		"svelte": "^3.44.0",
+		"svelte-calendar": "^3.1.6",
+		"svelte-check": "^2.7.1",
+		"svelte-fullcalendar": "^2.0.0-beta.0",
+		"svelte-motion": "^0.11.2",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.3",
+		"tslib": "^2.3.1",
+		"typescript": "^4.7.2",
+		"vite": "^3.0.3"
+	},
+	"type": "module",
+	"resolutions": {
+		"autoprefixer": "10.4.5"
+	},
+	"overrides": {
+		"autoprefixer": "10.4.5"
+	},
+	"dependencies": {
+		"@tailwindcss/forms": "^0.5.2",
+		"@tailwindcss/line-clamp": "^0.4.0",
+		"alpinejs": "^3.10.2",
+		"calendarize": "^1.1.1",
+		"carbon-icons-svelte": "^11.1.0",
+		"cssnano": "^5.1.11",
+		"postcss-cli": "^9.1.0",
+		"postcss-import": "^14.1.0",
+		"postcss-load-config": "^4.0.1",
+		"postcss-nesting": "^10.1.8",
+		"postcss-preset-env": "^7.7.1",
+		"remixicon": "^2.5.0",
+		"scroll-out": "^2.2.12",
+		"sirv-cli": "^2.0.2",
+		"svelte-flagpack": "^1.0.0",
+		"svelte-switch": "^0.0.5",
+		"svelte-transitions": "^1.2.0",
+		"swiper": "^8.3.1",
+		"typeface-playfair-display": "^1.1.13",
+		"typicons.font": "^2.1.2"
+	}
+}
